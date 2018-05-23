@@ -11,30 +11,31 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use App\Entity\Cocktail;
+
 /**
- * Brand controller.
  *
  * @Route("/api")
  */
 class CocktailController extends Controller
 {
     /**
-     * Lists all Articles.
+     * Lists all cocktails.
      * @FOSRest\Get("/cocktails")
-     *
      */
-    public function getArticleAction()
+    public function getCocktails()
     {
         $repository = $this->getDoctrine()->getRepository(Cocktail::class);
         $cocktails = $repository->findall();
 
-        return View::create($cocktails, Response::HTTP_OK , []);
+        return View::create($cocktails, Response::HTTP_OK, []);
     }
+
+
     /**
-     * Create Article.
+     * Create cocktail.
      * @FOSRest\Post("/cocktail")
      */
-    public function postArticleAction(Request $request)
+    public function postCocktail(Request $request)
     {
         $article = new Cocktail();
         $article->setName($request->get('name'));
@@ -43,6 +44,6 @@ class CocktailController extends Controller
         $em->persist($article);
         $em->flush();
 
-        return View::create($article, Response::HTTP_CREATED , []);
+        return View::create($article, Response::HTTP_CREATED, []);
     }
 }
