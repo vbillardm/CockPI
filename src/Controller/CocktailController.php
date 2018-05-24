@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Ingredients;
+use App\Entity\Tags;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -17,13 +19,16 @@ use App\Entity\Cocktail;
 class CocktailController extends Controller
 {
     /**
-     * Lists all cocktails.
-     * @FOSRest\Get("/cocktails")
+     * Lists all cocktails and tags
+     * @FOSRest\Get("/tags")
      */
     public function getCocktails()
     {
-        $repository = $this->getDoctrine()->getRepository(Cocktail::class);
-        $cocktails = $repository->findall();
+        $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->fetchAllCocktails();
+        $ingredients = $this->getDoctrine()->getRepository(Ingredients::class)->fetchAllIngredients();
+        $tags = $this->getDoctrine()->getRepository(Tags::class)->fetchAllTags();
+
+        dump($cocktails);die;
 
         return View::create($cocktails, Response::HTTP_OK, []);
     }

@@ -11,6 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Tags
 {
+
+    const Tag_Context = "Context";
+    const Tag_Caracteristique = "Caracteristique";
+    const Tag_Alcools = "Alcools";
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
