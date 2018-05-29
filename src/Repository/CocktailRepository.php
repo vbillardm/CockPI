@@ -64,4 +64,16 @@ class CocktailRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findCocktailByName($id)
+    {
+        $qb = $this->createQueryBuilder("c");
+        $qb
+            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate")
+            ->where('c.id = :id')
+            ->setParameter('id', $id);
+
+        return $qb->getQuery()->getResult();
+
+    }
 }

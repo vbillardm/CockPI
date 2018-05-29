@@ -53,7 +53,15 @@ class CocktailController extends Controller
      */
     public function postCocktail(Request $request)
     {
-        $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
+
+        if(($id = $request->get('search')) != null) {
+            $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->findCocktailByName($id);
+            if(empty($cocktails)) {
+                return View::create("This name does not match any cocktail bitch", Response::HTTP_BAD_REQUEST, []);
+            }
+        }else{
+            $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
+        }
 
         return View::create($cocktails, Response::HTTP_CREATED, []);
     }
