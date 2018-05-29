@@ -28,25 +28,33 @@ class CocktailController extends Controller
         $ingredients = $this->getDoctrine()->getRepository(Ingredients::class)->fetchAllIngredients();
         $tags = $this->getDoctrine()->getRepository(Tags::class)->fetchAllTags();
 
-        dump($cocktails);die;
+        foreach ($ingredients as $key => $ingredient){
+            $ingredients[$key]["type"] = "ingredient";
+            array_push($tags, $ingredients[$key]);
+        }
 
-        return View::create($cocktails, Response::HTTP_OK, []);
+        $result = [
+            "cocktails" => $cocktails,
+            "tags" => $tags,
+        ];
+
+        return View::create($result, Response::HTTP_OK, []);
     }
 
 
     /**
      * Create cocktail.
-     * @FOSRest\Post("/cocktail")
+     * @FOSRest\Post("/tags")
+     * @FOSRest\QueryParam(name="ingredients", nullable=true, description="ingredients")
+     * @FOSRest\QueryParam(name="context", nullable=true, description="context")
+     * @FOSRest\QueryParam(name="caracteristique", nullable=true, description="caracteristique")
+     * @FOSRest\QueryParam(name="alcool", nullable=true, description="alcool")
+     * @FOSRest\QueryParam(name="search", nullable=true, description="search")
      */
     public function postCocktail(Request $request)
     {
-        $article = new Cocktail();
-        $article->setName($request->get('name'));
-        $article->setDescription($request->get('description'));
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($article);
-        $em->flush();
+        $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
 
-        return View::create($article, Response::HTTP_CREATED, []);
+        return View::create($cocktails, Response::HTTP_CREATED, []);
     }
 }

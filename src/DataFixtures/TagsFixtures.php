@@ -21,6 +21,11 @@ class TagsFixtures extends Fixture
         $tags2->setName("Whisky");
         $this->setReference("Whisky_alcool", $tags2);
 
+        $tags4 = new Tags();
+        $tags4->setType(Tags::Tag_Alcools);
+        $tags4->setName("Vodka");
+        $this->setReference("vodka_alcool", $tags4);
+
         $tags3 = new Tags();
         $tags3->setType(Tags::Tag_Caracteristique);
         $tags3->setName("raffraichissant");
@@ -29,6 +34,7 @@ class TagsFixtures extends Fixture
         $manager->persist($tags);
         $manager->persist($tags2);
         $manager->persist($tags3);
+        $manager->persist($tags4);
 
         $manager->flush();
     }
