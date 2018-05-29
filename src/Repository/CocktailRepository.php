@@ -38,6 +38,28 @@ class CocktailRepository extends ServiceEntityRepository
                 ->where('i.id IN (:ingredients)')
                 ->setParameter("ingredients", $ids);
         }
+        if ( $request->get('context') ){
+            $ids = explode(",", $request->get('context'));
+            $qb
+                ->join("c.tags","t")
+                ->andWhere('t.id IN (:context)')
+                ->setParameter("context", $ids);
+        }
+
+        if ( $request->get('alcool') ){
+            $ids = explode(",", $request->get('alcool'));
+            $qb
+                ->join("c.tags","a")
+                ->andWhere('a.id IN (:alcool)')
+                ->setParameter("alcool", $ids);
+        }
+        if ( $request->get('caracteristique') ){
+            $ids = explode(",", $request->get('caracteristique'));
+            $qb
+                ->join("c.tags","ca")
+                ->andWhere('ca.id IN (:caracteristique)')
+                ->setParameter("caracteristique", $ids);
+        }
 
 
         return $qb->getQuery()->getResult();

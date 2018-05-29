@@ -15,6 +15,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $menthe_mojito = $this->getReference("menthe_mojito");
         $caracteristique = $this->getReference("raffraichissant_cara");
         $context_soiree = $this->getReference("soirée_context");
+        $rhum = $this->getReference("rhum_alcool");
 
         $cocktail = new Cocktail();
         $cocktail->setImage("https://static.cuisineaz.com/610x610/i14978-recette-de-mojito.jpeg");
@@ -22,7 +23,9 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail->setName("Mojito");
         $cocktail->addIngredient($menthe_mojito);
         $cocktail->addStep($step_piller_glace_1);
-        $cocktail->addTag($caracteristique, $context_soiree);
+        $cocktail->addTag($caracteristique);
+        $cocktail->addTag($rhum);
+        $cocktail->addTag($context_soiree);
 
 
         $this->setReference("Mojito", $cocktail);
