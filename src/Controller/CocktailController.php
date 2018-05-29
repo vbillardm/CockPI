@@ -43,7 +43,7 @@ class CocktailController extends Controller
 
 
     /**
-     * Create cocktail.
+     * search a cocktail.
      * @FOSRest\Post("/tags")
      * @FOSRest\QueryParam(name="ingredients", nullable=true, description="ingredients")
      * @FOSRest\QueryParam(name="context", nullable=true, description="context")
