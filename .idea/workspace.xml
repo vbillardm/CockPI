@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2b2935b-7bba-4c83-a115-91c0c1dbaafb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/Controller/CocktailController.php" afterPath="$PROJECT_DIR$/src/Controller/CocktailController.php" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CocktailRepository.php" afterPath="$PROJECT_DIR$/src/Repository/CocktailRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="Cocktail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Cocktail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="469">
+              <caret line="303" column="38" lean-forward="false" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="38" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
@@ -31,8 +32,8 @@
       <file leaf-file-name="CocktailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CocktailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="423">
+              <caret line="109" column="79" lean-forward="true" selection-start-line="109" selection-start-column="79" selection-end-line="109" selection-end-column="79" />
               <folding>
                 <element signature="e#34#61#0#PHP" expanded="true" />
               </folding>
@@ -43,8 +44,8 @@
       <file leaf-file-name="CocktailRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            <state relative-caret-position="633">
+              <caret line="104" column="33" lean-forward="false" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
@@ -79,6 +80,8 @@
       <find>price_rate</find>
       <find>addingre</find>
       <find>step2_mojito</find>
+      <find>getglo</find>
+      <find>setGlobalRateVotes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,10 +101,10 @@
         <option value="$PROJECT_DIR$/src/DataFixtures/TagsFixtures.php" />
         <option value="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" />
         <option value="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" />
-        <option value="$PROJECT_DIR$/src/Repository/CocktailRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Cocktail.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/CocktailFixtures.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php" />
+        <option value="$PROJECT_DIR$/src/Repository/CocktailRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/CocktailController.php" />
       </list>
     </option>
@@ -280,12 +283,12 @@
       <workItem from="1527081953925" duration="7412000" />
       <workItem from="1527324814351" duration="7193000" />
       <workItem from="1527667032911" duration="4501000" />
-      <workItem from="1527686170442" duration="3065000" />
+      <workItem from="1527686170442" duration="4421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22267000" />
+    <option name="totallyTimeSpent" value="23623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="955" extended-state="6" />
@@ -702,30 +705,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Cocktail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="469">
+          <caret line="303" column="38" lean-forward="false" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="38" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="104" column="33" lean-forward="false" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
+          <folding>
+            <element signature="e#34#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CocktailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="423">
+          <caret line="109" column="79" lean-forward="true" selection-start-line="109" selection-start-column="79" selection-end-line="109" selection-end-column="79" />
           <folding>
             <element signature="e#34#61#0#PHP" expanded="true" />
           </folding>

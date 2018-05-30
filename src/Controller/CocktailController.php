@@ -103,4 +103,28 @@ class CocktailController extends Controller
         }
         return View::create($cocktail, Response::HTTP_FOUND, []);
     }
+
+    /**
+     * rate a specific cocktail
+     * @FOSRest\Post("/cocktail/{id}/rate")
+     * @FOSRest\QueryParam(name="rate", nullable=false, description="rate value in [1..5]", requirements={"/^[1-5]$/"})
+     */
+    public function rateACocktail($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->findByid($id);
+        $cocktail->setGlobalRateVotes($cocktail->getGlobalRateVotes() +1);
+        $cocktail->setGlobalRate($cocktail->getGlobalRate() + $request->get('rate'));
+
+        $em->persist($cocktail);
+        $em->flush();
+
+
+        if(empty($cocktail)) {
+            return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
+        }
+
+        return View::create($cocktail, Response::HTTP_FOUND, []);
+    }
 }

@@ -105,7 +105,7 @@ class CocktailRepository extends ServiceEntityRepository
             ->where("c.id = :id")
             ->setParameter("id", $id);
 
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()->getOneOrNullResult();
 
     }
 }
