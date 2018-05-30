@@ -107,6 +107,7 @@ class CocktailController extends Controller
     /**
      * rate a specific cocktail
      * @FOSRest\Post("/cocktail/{id}/rate")
+     * @todo  fix requirements
      * @FOSRest\QueryParam(name="rate", nullable=false, description="rate value in [1..5]", requirements={"/^[1-5]$/"})
      */
     public function rateACocktail($id, Request $request)
