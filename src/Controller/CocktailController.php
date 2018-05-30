@@ -97,6 +97,10 @@ class CocktailController extends Controller
     public function getCocktailById($id)
     {
         $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->findByid($id);
+
+        if(empty($cocktail)) {
+            return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
+        }
         return View::create($cocktail, Response::HTTP_FOUND, []);
     }
 }
