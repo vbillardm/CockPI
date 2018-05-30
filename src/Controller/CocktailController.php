@@ -19,8 +19,7 @@ use App\Entity\Cocktail;
 class CocktailController extends Controller
 {
     /**
-     * Lists all cocktails and tags
-     * @FOSRest\Get("/tags")
+     * @return mixed array
      */
     public function getCocktails()
     {
@@ -92,7 +91,8 @@ class CocktailController extends Controller
     }
 
     /**
-     * @FOSRest\Get("/cocktail/{id}")
+     * search for a specific cocktail by id
+     * @FOSRest\Get("/cocktail/{id}", requirements={"\d+"})
      */
     public function getCocktailById($id)
     {
