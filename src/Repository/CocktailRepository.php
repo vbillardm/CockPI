@@ -87,4 +87,25 @@ class CocktailRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findByid($id)
+    {
+
+        $qb = $this->createQueryBuilder("c");
+        $qb
+//            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate",
+//                "c.speedRate", "c.speedRateVotes", "c.difficultyRate", "c.difficultyRateVotes", "c.PriceRate", "c.priceRateVotes",
+//                "t.id", "t.name as tagName", "t.type",
+//                "s.id", "s.name as stepname", "s.description", "s.url", "s.image", "s.nStep",
+//                "i.id", "i.name as ingredientName", "i.quantity", "i.unity"
+//            )
+            ->join("c.tags", "t")
+            ->join("c.steps", "s")
+            ->join("c.ingredients", "i")
+            ->where("c.id = :id")
+            ->setParameter("id", $id);
+
+        return $qb->getQuery()->getResult();
+
+    }
 }

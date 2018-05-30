@@ -90,4 +90,13 @@ class CocktailController extends Controller
 
         return View::create($cocktails, Response::HTTP_CREATED, []);
     }
+
+    /**
+     * @FOSRest\Get("/cocktail/{id}")
+     */
+    public function getCocktailById($id)
+    {
+        $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->findByid($id);
+        return View::create($cocktail, Response::HTTP_FOUND, []);
+    }
 }

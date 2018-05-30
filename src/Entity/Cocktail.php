@@ -26,12 +26,12 @@ class Cocktail
     /**
      * @ORM\Column(type="text")
      */
-    public $description;
+    public $description = "";
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Steps", mappedBy="cocktail")
      */
-    private $Steps;
+    private $steps;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="cocktail")
@@ -41,47 +41,47 @@ class Cocktail
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $image;
+    private $image ="";
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $speedRate;
+    private $speedRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $speedRateVotes;
+    private $speedRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $difficultyRate;
+    private $difficultyRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $difficultyRateVotes;
+    private $difficultyRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $PriceRate;
+    private $PriceRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $priceRateVotes;
+    private $priceRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $GlobalRate;
+    private $GlobalRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $globalRateVotes;
+    private $globalRateVotes = 0;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Tags", inversedBy="cocktails")
@@ -90,7 +90,7 @@ class Cocktail
 
     public function __construct()
     {
-        $this->Steps = new ArrayCollection();
+        $this->steps = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
         $this->tags = new ArrayCollection();
     }
@@ -148,13 +148,13 @@ class Cocktail
      */
     public function getSteps(): Collection
     {
-        return $this->Steps;
+        return $this->steps;
     }
 
     public function addStep(Steps $step): self
     {
-        if (!$this->Steps->contains($step)) {
-            $this->Steps[] = $step;
+        if (!$this->steps->contains($step)) {
+            $this->steps[] = $step;
             $step->setCocktail($this);
         }
 
@@ -163,8 +163,8 @@ class Cocktail
 
     public function removeStep(Steps $step): self
     {
-        if ($this->Steps->contains($step)) {
-            $this->Steps->removeElement($step);
+        if ($this->steps->contains($step)) {
+            $this->steps->removeElement($step);
             // set the owning side to null (unless already changed)
             if ($step->getCocktail() === $this) {
                 $step->setCocktail(null);
