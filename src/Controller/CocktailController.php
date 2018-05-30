@@ -37,8 +37,8 @@ class CocktailController extends Controller
             "cocktails" => $cocktails,
             "tags" => $tags,
         ];
-
-        return View::create($result, Response::HTTP_OK, []);
+        return $result;
+//        return View::create($result, Response::HTTP_OK, []);
     }
 
 
@@ -50,17 +50,42 @@ class CocktailController extends Controller
      * @FOSRest\QueryParam(name="caracteristique", nullable=true, description="caracteristique")
      * @FOSRest\QueryParam(name="alcool", nullable=true, description="alcool")
      * @FOSRest\QueryParam(name="search", nullable=true, description="search")
+     * @FOSRest\QueryParam(name="get_tags", nullable=true, description="get_tags")
      */
     public function postCocktail(Request $request)
     {
-
         if(($id = $request->get('search')) != null) {
             $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->findCocktailByName($id);
             if(empty($cocktails)) {
                 return View::create("This name does not match any cocktail bitch", Response::HTTP_BAD_REQUEST, []);
             }
-        }else{
+        }elseif ( $request->get('alcool') != "" and $request->get('ingredients') != ""){
             $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
+
+            // algo valeurs ajouté pour les tags
+            foreach ($cocktails as $index => $cocktail){
+                $cocktails[$index]["value"] = 1;
+                $tags = ($this->getDoctrine()->getRepository(Cocktail::class)->find($cocktail["id"]))->getTags();
+                foreach ($tags as $tag){
+                    $ids = explode(",", $request->get('caracteristique'));
+                    if(in_array($tag->getId(), $ids )){
+                        $cocktails[$index]["value"] += 2;
+                    };
+
+                    $ids_context = explode(",", $request->get('context'));
+                    if(in_array($tag->getId(), $ids_context )){
+                        $cocktails[$index]["value"] += 1;
+                    };
+                }
+            }
+        }else{
+            $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->findTheBest();
+        }
+
+        if ( intval($request->get('get_tags')) === 1){
+            $tags = $this->getCocktails();
+            $result = [$tags, $cocktails];
+            return View::create($result, Response::HTTP_CREATED, []);
         }
 
         return View::create($cocktails, Response::HTTP_CREATED, []);

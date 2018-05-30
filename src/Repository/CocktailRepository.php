@@ -38,13 +38,6 @@ class CocktailRepository extends ServiceEntityRepository
                 ->where('i.id IN (:ingredients)')
                 ->setParameter("ingredients", $ids);
         }
-        if ( $request->get('context') ){
-            $ids = explode(",", $request->get('context'));
-            $qb
-                ->join("c.tags","t")
-                ->andWhere('t.id IN (:context)')
-                ->setParameter("context", $ids);
-        }
 
         if ( $request->get('alcool') ){
             $ids = explode(",", $request->get('alcool'));
@@ -53,14 +46,21 @@ class CocktailRepository extends ServiceEntityRepository
                 ->andWhere('a.id IN (:alcool)')
                 ->setParameter("alcool", $ids);
         }
-        if ( $request->get('caracteristique') ){
-            $ids = explode(",", $request->get('caracteristique'));
-            $qb
-                ->join("c.tags","ca")
-                ->andWhere('ca.id IN (:caracteristique)')
-                ->setParameter("caracteristique", $ids);
-        }
 
+//        if ( $request->get('context') ){
+//            $ids = explode(",", $request->get('context'));
+//            $qb
+//                ->leftjoin("c.tags","t");
+////                ->andWhere('t.id IN (:context)')
+////                ->setParameter("context", $ids);
+//        }
+//
+//        if ( $request->get('caracteristique') ){
+//            $ids = explode(",", $request->get('caracteristique'));
+//            $qb
+//                ->leftjoin("c.tags","ca");
+//        }
+            $qb->groupBy("c.id");
 
         return $qb->getQuery()->getResult();
     }
@@ -75,5 +75,16 @@ class CocktailRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
 
+    }
+
+    public function findTheBest()
+    {
+        $qb = $this->createQueryBuilder("c");
+        $qb
+            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate")
+            ->orderBy("c.GlobalRate", "DESC")
+            ->setMaxResults(12);
+
+        return $qb->getQuery()->getResult();
     }
 }
