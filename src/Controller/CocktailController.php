@@ -11,10 +11,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use App\Entity\Cocktail;
+use Nelmio\ApiDocBundle\ApiDocGenerator;
 
 /**
  *
  * @Route("/api")
+ * @package ApiBundle\Controller
  */
 class CocktailController extends Controller
 {
@@ -48,8 +50,9 @@ class CocktailController extends Controller
      * @FOSRest\QueryParam(name="context", nullable=true, description="context")
      * @FOSRest\QueryParam(name="caracteristique", nullable=true, description="caracteristique")
      * @FOSRest\QueryParam(name="alcool", nullable=true, description="alcool")
-     * @FOSRest\QueryParam(name="search", nullable=true, description="search")
-     * @FOSRest\QueryParam(name="get_tags", nullable=true, description="get_tags")
+     * @FOSRest\QueryParam(name="search", nullable=true, description="search if not blank return the cocktail searched")
+     * @FOSRest\QueryParam(name="get_tags", nullable=true, description="get_tags if true send the tags array with the answer")
+     *
      */
     public function postCocktail(Request $request)
     {
