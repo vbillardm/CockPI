@@ -44,12 +44,16 @@ class CocktailController extends Controller
 
 
     /**
-     * search a cocktail.
+     * search a list of cocktail or a list of tags.  --
+     * if alcool and ingredients are set => return list of cocktails.
+     * if search is set => return a cocktail
+     * if get_tags is set to 1 => return the tag's list and the cocktail's list.
+     * if nothing is set => return the 12 first best notes i get.
      * @FOSRest\Post("/tags")
-     * @FOSRest\QueryParam(name="ingredients", nullable=true, description="ingredients")
-     * @FOSRest\QueryParam(name="context", nullable=true, description="context")
-     * @FOSRest\QueryParam(name="caracteristique", nullable=true, description="caracteristique")
-     * @FOSRest\QueryParam(name="alcool", nullable=true, description="alcool")
+     * @FOSRest\QueryParam(name="ingredients", nullable=true, description="string d'ingredients séparé par des virgules.")
+     * @FOSRest\QueryParam(name="context", nullable=true, description="string d'context séparé par des virgules.")
+     * @FOSRest\QueryParam(name="caracteristique", nullable=true, description="string d'caracteristique séparé par des virgules.")
+     * @FOSRest\QueryParam(name="alcool", nullable=true, description="string d'alcools séparé par des virgules")
      * @FOSRest\QueryParam(name="search", nullable=true, description="search if not blank return the cocktail searched")
      * @FOSRest\QueryParam(name="get_tags", nullable=true, description="get_tags if true send the tags array with the answer")
      *
@@ -109,9 +113,11 @@ class CocktailController extends Controller
 
     /**
      * rate a specific cocktail
+     * if cocktail not found return a 404
      * @FOSRest\Post("/cocktail/{id}/rate")
      * @todo  fix requirements
      * @FOSRest\QueryParam(name="rate", nullable=false, description="rate value in [1..5]", requirements={"/^[1-5]$/"})
+     *
      */
     public function rateACocktail($id, Request $request)
     {
