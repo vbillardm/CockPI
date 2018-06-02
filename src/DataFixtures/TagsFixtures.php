@@ -11,11 +11,14 @@ class TagsFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+                    // !!!!!!!!!!!!!!!!!!!! ATTENTION AUX NUMBER_TAGS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //Contexte
         $tags = new Tags();
         $tags->setType(Tags::Tag_Context);
         $tags->setName("Soirée entre amis");
         $this->setReference("soirée_context", $tags);
 
+        // Alcool
         $tags2 = new Tags();
         $tags2->setType(Tags::Tag_Alcools);
         $tags2->setName("Whisky");
@@ -31,6 +34,13 @@ class TagsFixtures extends Fixture
         $tags5->setName("Rhum");
         $this->setReference("rhum_alcool", $tags5);
 
+        $tags5 = new Tags();
+        $tags5->setType(Tags::Tag_Alcools);
+        $tags5->setName("Campari");
+        $this->setReference("campari_alcool", $tags5);
+
+
+        // Caracteristique
         $tags3 = new Tags();
         $tags3->setType(Tags::Tag_Caracteristique);
         $tags3->setName("raffraichissant");
