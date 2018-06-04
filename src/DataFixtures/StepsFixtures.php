@@ -48,6 +48,9 @@ class StepsFixtures extends Fixture implements DependentFixtureInterface
         $sucre_400 = $this->getReference("sucre_400");
         $eau_50 = $this->getReference("eau_50");
         $citron_3 = $this->getReference("citron_3");
+        $glace_vanille_25 = $this->getReference("glace_vanille_25");
+        $liqueur_café_20 = $this->getReference("liqueur_café_20");
+        $whisky_20 = $this->getReference("whisky_20");
 
 
         // Mojito

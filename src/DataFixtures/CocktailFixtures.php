@@ -23,33 +23,33 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $step6_mojito = $this->getReference("step6_mojito");
         $step7_mojito = $this->getReference("step7_mojito");
         $step8_mojito = $this->getReference("step8_mojito");
-        $step1_americano = $this->setReference("step1_americano");
-        $step2_americano = $this->setReference("step2_americano");
-        $step3_americano = $this->setReference("step3_americano");
-        $step4_americano = $this->setReference("step4_americano");
-        $step1_balalaïka = $this->setReference("step1_balalaïka");
-        $step2_balalaïka = $this->setReference("step2_balalaïka");
-        $step1_coco = $this->setReference("step1_coco");
-        $step2_coco = $this->setReference("step2_coco");
-        $step3_coco = $this->setReference("step3_coco");
-        $step4_coco = $this->setReference("step4_coco");
-        $step1_cosmo = $this->setReference("step1_cosmo");
-        $step2_cosmo = $this->setReference("step2_cosmo");
-        $step3_cosmo = $this->setReference("step3_cosmo");
-        $step4_cosmo = $this->setReference("step4_cosmo");
-        $step1_bailey = $this->setReference("step1_bailey");
-        $step2_bailey = $this->setReference("step2_bailey");
-        $step1_bloodymary = $this->setReference("step1_bloodymary");
-        $step2_bloodymary = $this->setReference("step2_bloodymary");
-        $step3_bloodymary = $this->setReference("step3_bloodymary");
-        $step1_caipirinha = $this->setReference("step1_caipirinha");
-        $step2_caipirinha = $this->setReference("step2_caipirinha");
-        $step3_caipirinha = $this->setReference("step3_caipirinha");
-        $step1_donpedro = $this->setReference("step1_donpedro");
-        $step2_donpedro = $this->setReference("step2_donpedro");
-        $step1_limoncello = $this->setReference("step1_limoncello");
-        $step2_limoncello = $this->setReference("step2_limoncello");
-        $step3_limoncello = $this->setReference("step3_limoncello");
+        $step1_americano = $this->getReference("step1_americano");
+        $step2_americano = $this->getReference("step2_americano");
+        $step3_americano = $this->getReference("step3_americano");
+        $step4_americano = $this->getReference("step4_americano");
+        $step1_balalaïka = $this->getReference("step1_balalaïka");
+        $step2_balalaïka = $this->getReference("step2_balalaïka");
+        $step1_coco = $this->getReference("step1_coco");
+        $step2_coco = $this->getReference("step2_coco");
+        $step3_coco = $this->getReference("step3_coco");
+        $step4_coco = $this->getReference("step4_coco");
+        $step1_cosmo = $this->getReference("step1_cosmo");
+        $step2_cosmo = $this->getReference("step2_cosmo");
+        $step3_cosmo = $this->getReference("step3_cosmo");
+        $step4_cosmo = $this->getReference("step4_cosmo");
+        $step1_bailey = $this->getReference("step1_bailey");
+        $step2_bailey = $this->getReference("step2_bailey");
+        $step1_bloodymary = $this->getReference("step1_bloodymary");
+        $step2_bloodymary = $this->getReference("step2_bloodymary");
+        $step3_bloodymary = $this->getReference("step3_bloodymary");
+        $step1_caipirinha = $this->getReference("step1_caipirinha");
+        $step2_caipirinha = $this->getReference("step2_caipirinha");
+        $step3_caipirinha = $this->getReference("step3_caipirinha");
+        $step1_donpedro = $this->getReference("step1_donpedro");
+        $step2_donpedro = $this->getReference("step2_donpedro");
+        $step1_limoncello = $this->getReference("step1_limoncello");
+        $step2_limoncello = $this->getReference("step2_limoncello");
+        $step3_limoncello = $this->getReference("step3_limoncello");
 
 
         /*** @var  $menthe_mojito Ingredients */
@@ -87,7 +87,9 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $sucre_400 = $this->getReference("sucre_400");
         $eau_50 = $this->getReference("eau_50");
         $citron_3 = $this->getReference("citron_3");
-
+        $glace_vanille_25 = $this->getReference("glace_vanille_25");
+        $liqueur_café_20 = $this->getReference("liqueur_café_20");
+        $whisky_20 = $this->getReference("whisky_20");
 
         /*** @var  $caracteristique Tags */
         $frais_caract = $this->getReference("frais_caract");
@@ -138,8 +140,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail1->addStep($step6_mojito);
         $cocktail1->addStep($step7_mojito);
         $cocktail1->addStep($step8_mojito);
-        $cockatil1->setSpeedRate(1);
-        $cokctail1->setDifficultyRate(1);
+        $cocktail1->setSpeedRate(1);
+        $cocktail1->setDifficultyRate(1);
         $cocktail1->setPriceRate(1);
         $cocktail1->addTag($frais_caract);
         $cocktail1->addTag($classique_caract);
@@ -161,8 +163,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail2->addStep($step2_americano);
         $cocktail2->addStep($step3_americano);
         $cocktail2->addStep($step4_americano);
-        $cockatil2->setSpeedRate(1);
-        $cokctail2->setDifficultyRate(1);
+        $cocktail2->setSpeedRate(1);
+        $cocktail2->setDifficultyRate(1);
         $cocktail2->setPriceRate(1);
         $cocktail2->addTag($élégant_caract);
         $cocktail2->addTag($apéro_context);
@@ -179,8 +181,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail3->addIngredient($glace_2);
         $cocktail3->addStep($step1_balalaïka);
         $cocktail3->addStep($step2_balalaïka);
-        $cockatil3->setSpeedRate(1);
-        $cokctail3->setDifficultyRate(1);
+        $cocktail3->setSpeedRate(1);
+        $cocktail3->setDifficultyRate(1);
         $cocktail3->setPriceRate(1);
         $cocktail3->addTag($frais_caract);
         $cocktail3->addTag($sucré_caract);
@@ -199,8 +201,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail4->addStep($step2_coco);
         $cocktail4->addStep($step3_coco);
         $cocktail4->addStep($step4_coco);
-        $cockatil4->setSpeedRate(3);
-        $cokctail4->setDifficultyRate(2);
+        $cocktail4->setSpeedRate(3);
+        $cocktail4->setDifficultyRate(2);
         $cocktail4->setPriceRate(3);
         $cocktail4->addTag($original_caract);
         $cocktail4->addTag($frais_caract);
@@ -219,8 +221,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail5->addStep($step2_cosmo);
         $cocktail5->addStep($step3_cosmo);
         $cocktail5->addStep($step4_cosmo);
-        $cockatil5->setSpeedRate(1);
-        $cokctail5->setDifficultyRate(1);
+        $cocktail5->setSpeedRate(1);
+        $cocktail5->setDifficultyRate(1);
         $cocktail5->setPriceRate(1);
         $cocktail5->addTag($fruité_caract);
         $cocktail5->addTag($élégant_caract);
@@ -238,8 +240,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail6->addIngredient($chantilly_1);
         $cocktail6->addStep($step1_bailey);
         $cocktail6->addStep($step2_bailey);
-        $cockatil6->setSpeedRate(1);
-        $cokctail6->setDifficultyRate(1);
+        $cocktail6->setSpeedRate(1);
+        $cocktail6->setDifficultyRate(1);
         $cocktail6->setPriceRate(1);
         $cocktail6->addTag($gourmand_caract);
         $cocktail6->addTag($rapide_caract);
@@ -260,8 +262,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail7->addStep($step1_bloodymary);
         $cocktail7->addStep($step2_bloodymary);
         $cocktail7->addStep($step3_bloodymary);
-        $cockatil7->setSpeedRate(1);
-        $cokctail7->setDifficultyRate(1);
+        $cocktail7->setSpeedRate(1);
+        $cocktail7->setDifficultyRate(1);
         $cocktail7->setPriceRate(1);
         $cocktail7->addTag($remettre_gueule_context);
         $cocktail7->addTag($épicé_caract);
@@ -278,8 +280,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail8->addStep($step1_caipirinha);
         $cocktail8->addStep($step2_caipirinha);
         $cocktail8->addStep($step3_caipirinha);
-        $cockatil8->setSpeedRate(1);
-        $cokctail8->setDifficultyRate(1);
+        $cocktail8->setSpeedRate(1);
+        $cocktail8->setDifficultyRate(1);
         $cocktail8->setPriceRate(1);
         $cocktail8->addTag($frais_caract);
         $cocktail8->addTag($rapide_caract);
@@ -298,8 +300,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail9->addIngredient($whisky_20);
         $cocktail9->addStep($step1_donpedro);
         $cocktail9->addStep($step2_donpedro);
-        $cockatil9->setSpeedRate(1);
-        $cokctail9->setDifficultyRate(1);
+        $cocktail9->setSpeedRate(1);
+        $cocktail9->setDifficultyRate(1);
         $cocktail9->setPriceRate(3);
         $cocktail9->addTag($original_caract);
         $cocktail9->addTag($gourmand_caract);
@@ -317,8 +319,8 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail10->addIngredient($citron_3);
         $cocktail10->addStep($step1_limoncello);
         $cocktail10->addStep($step2_limoncello);
-        $cockatil10->setSpeedRate(1);
-        $cokctail10->setDifficultyRate(1);
+        $cocktail10->setSpeedRate(1);
+        $cocktail10->setDifficultyRate(1);
         $cocktail10->setPriceRate(3);
         $cocktail10->addTag($frais_caract);
         $cocktail10->addTag($bourrer_gueule_context);
@@ -337,7 +339,17 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $this->setReference("Cachaça", $cocktail8);
         $this->setReference("Don Pedro", $cocktail9);
         $this->setReference("Limoncello", $cocktail10);
-        $manager->persist($cocktail);
+
+        $manager->persist($cocktail1);
+        $manager->persist($cocktail2);
+        $manager->persist($cocktail3);
+        $manager->persist($cocktail4);
+        $manager->persist($cocktail5);
+        $manager->persist($cocktail6);
+        $manager->persist($cocktail7);
+        $manager->persist($cocktail8);
+        $manager->persist($cocktail9);
+        $manager->persist($cocktail10);
         $manager->flush();
     }
 
