@@ -100,8 +100,7 @@ class CocktailController extends Controller
             return View::create($result, Response::HTTP_CREATED, []);
         }
 
-//        return View::create($cocktails, Response::HTTP_CREATED, []);
-        return new JsonResponse($cocktails, 200, array(), true);
+        return View::create($cocktails, Response::HTTP_CREATED, []);
     }
 
     /**
