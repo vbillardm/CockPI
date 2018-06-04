@@ -4,9 +4,8 @@
     <list default="true" id="b2b2935b-7bba-4c83-a115-91c0c1dbaafb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CocktailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CocktailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CocktailFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CocktailFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Cocktail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cocktail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Steps.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Steps.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="Cocktail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Cocktail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="153">
+              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
@@ -32,11 +31,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Steps.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Steps.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+              <folding>
+                <element signature="e#30#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ingredients.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Ingredients.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CocktailController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CocktailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="56" column="57" lean-forward="true" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
+            <state relative-caret-position="258">
+              <caret line="129" column="63" lean-forward="true" selection-start-line="129" selection-start-column="63" selection-end-line="129" selection-end-column="63" />
               <folding>
                 <element signature="e#34#61#0#PHP" expanded="true" />
               </folding>
@@ -44,23 +64,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CocktailRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CocktailRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="101" selection-start-line="101" selection-end-line="103" selection-end-column="40" />
+            <state relative-caret-position="496">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CocktailFixtures.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DataFixtures/CocktailFixtures.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4481">
-              <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -69,20 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>extra</find>
-      <find>tags</find>
-      <find>cock</find>
-      <find>n</find>
-      <find>ingredients</find>
-      <find>rhum_alcool</find>
-      <find>contex</find>
-      <find>addtaf</find>
-      <find>$gla</find>
-      <find>PARA</find>
-      <find>BAD</find>
-      <find>bad</find>
-      <find>titl</find>
-      <find>ste</find>
       <find>Ste</find>
       <find>$Steps</find>
       <find>PriceRateVotes</find>
@@ -99,6 +96,20 @@
       <find>setrefe</find>
       <find>jms</find>
       <find>/tags</find>
+      <find>geting</find>
+      <find>depth</find>
+      <find>serialize(</find>
+      <find>serialize</find>
+      <find>excl</find>
+      <find>seriali</find>
+      <find>setExpressionEvaluator</find>
+      <find>tags</find>
+      <find>strateg</find>
+      <find>DisjunctExclusionStrategy</find>
+      <find>maxdep</find>
+      <find>step</find>
+      <find>ingredient</find>
+      <find>setingre</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -123,9 +134,10 @@
         <option value="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" />
         <option value="$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/CocktailFixtures.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Cocktail.php" />
-        <option value="$PROJECT_DIR$/src/Controller/CocktailController.php" />
         <option value="$PROJECT_DIR$/src/Repository/CocktailRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/CocktailController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Cocktail.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Steps.php" />
       </list>
     </option>
   </component>
@@ -295,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25696000" />
+    <option name="totallyTimeSpent" value="30199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -340,69 +352,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/bundles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="92" lean-forward="true" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/fos_rest.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/ReferenceRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/AbstractFixture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/TagsFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jms/metadata/tests/Metadata/Tests/Driver/Fixture/T/T.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/IngredientsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Ingredients.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -568,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Ingredients.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -639,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Steps.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/IngredientsFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -660,10 +595,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+        <state relative-caret-position="210">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/prod/jms_serializer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/jms_serializer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -674,46 +623,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle/View/View.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/JsonResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
+        <state relative-caret-position="216">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Cocktail.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="496">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
+            <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Response.php">
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/EventDispatcher/Subscriber/DoctrineProxySubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+        <state relative-caret-position="114">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle/View/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="233" column="24" selection-start-line="233" selection-start-column="24" selection-end-line="233" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Exception/ExpressionLanguageRequiredException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Exclusion/ExclusionStrategyInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Exclusion/DepthExclusionStrategy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Exclusion/DisjunctExclusionStrategy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Context.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="135" column="61" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CocktailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="56" column="57" lean-forward="true" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
+        <state relative-caret-position="258">
+          <caret line="129" column="63" lean-forward="true" selection-start-line="129" selection-start-column="63" selection-end-line="129" selection-end-column="63" />
           <folding>
             <element signature="e#34#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/CocktailRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/StepsFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="101" selection-start-line="101" selection-end-line="103" selection-end-column="40" />
+        <state relative-caret-position="258">
+          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Ingredients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Cocktail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#30#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Steps.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

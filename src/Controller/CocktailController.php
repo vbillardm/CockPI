@@ -4,6 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Ingredients;
 use App\Entity\Tags;
+use JMS\Serializer\Exclusion\DisjunctExclusionStrategy;
+use JMS\Serializer\Expression\ExpressionEvaluator;
+use JMS\Serializer\SerializationContext;
+use JMS\Serializer\SerializerBuilder;
+use Symfony\Component\DependencyInjection\ExpressionLanguage;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -111,7 +116,20 @@ class CocktailController extends Controller
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-        return View::create($cocktail, Response::HTTP_OK, []);
+
+//        $result = [
+//            "id" => $cocktail->getId(),
+//            "name" => $cocktail->getName(),
+//            "description" => $cocktail->getDescription(),
+//            "steps" => $cocktail->getSteps()->getValues(),
+//        ];
+//dump($result);die;
+        $serializer = $this->get('jms_serializer');
+        $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks());
+//        dump($cocktailJSON);die;
+        return new Response($cocktailJSON, 200, array(), true);
+
+//        return View::create($cocktail, Response::HTTP_OK, []);
     }
 
     /**

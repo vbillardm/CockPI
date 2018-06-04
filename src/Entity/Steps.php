@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\StepsRepository")
@@ -40,6 +41,7 @@ class Steps
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="steps")
+     * @JMS\MaxDepth(depth=3)
      */
     private $ingredients;
 
@@ -50,6 +52,7 @@ class Steps
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Cocktail", inversedBy="Steps")
+     * @JMS\MaxDepth(depth=0)
      */
     private $cocktail;
 
