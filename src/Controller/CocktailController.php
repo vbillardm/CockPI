@@ -116,20 +116,10 @@ class CocktailController extends Controller
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-
-//        $result = [
-//            "id" => $cocktail->getId(),
-//            "name" => $cocktail->getName(),
-//            "description" => $cocktail->getDescription(),
-//            "steps" => $cocktail->getSteps()->getValues(),
-//        ];
-//dump($result);die;
         $serializer = $this->get('jms_serializer');
         $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks());
-//        dump($cocktailJSON);die;
-        return new Response($cocktailJSON, 200, array(), true);
 
-//        return View::create($cocktail, Response::HTTP_OK, []);
+        return new Response($cocktailJSON, 200, array(), true);
     }
 
     /**
@@ -157,5 +147,31 @@ class CocktailController extends Controller
         }
 
         return new JsonResponse($cocktail, 200, array(), true);
+    }
+
+
+    /**
+     * @FOSRest\Get("/cyrilHereYouGo")
+     */
+    public function getCocktailsForCyrus()
+    {
+        $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->findAll();
+        $ingredients = $this->getDoctrine()->getRepository(Ingredients::class)->fetchAllIngredients();
+        $tags = $this->getDoctrine()->getRepository(Tags::class)->fetchAllTags();
+
+        foreach ($ingredients as $key => $ingredient){
+            $ingredients[$key]["type"] = "ingredient";
+            array_push($tags, $ingredients[$key]);
+        }
+
+        $serializer = $this->get('jms_serializer');
+        $result = [
+            "cocktails" => $cocktails,
+            "tags" => $tags,
+        ];
+
+        $cocktailJSON = $serializer->serialize($result, 'json', SerializationContext::create()->enableMaxDepthChecks());
+
+        return new JsonResponse($cocktailJSON, 200, array(), true);
     }
 }
