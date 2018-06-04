@@ -111,7 +111,7 @@ class CocktailController extends Controller
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-//        return View::create($cocktail, Response::HTTP_OK, []);
+        return View::create($cocktail, Response::HTTP_OK, []);
     }
 
     /**
