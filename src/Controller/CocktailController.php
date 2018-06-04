@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ingredients;
 use App\Entity\Tags;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -94,7 +95,8 @@ class CocktailController extends Controller
             return View::create($result, Response::HTTP_CREATED, []);
         }
 
-        return View::create($cocktails, Response::HTTP_CREATED, []);
+//        return View::create($cocktails, Response::HTTP_CREATED, []);
+        return new JsonResponse($cocktails, 200, array(), true);
     }
 
     /**
@@ -103,13 +105,13 @@ class CocktailController extends Controller
      */
     public function getCocktailById($id)
     {
-        $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->findByid($id);
+        $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->find($id);
 
         if(empty($cocktail)) {
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-        return View::create($cocktail, Response::HTTP_OK, []);
+//        return View::create($cocktail, Response::HTTP_OK, []);
     }
 
     /**
@@ -136,6 +138,6 @@ class CocktailController extends Controller
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-        return View::create($cocktail, Response::HTTP_OK, []);
+        return new JsonResponse($cocktail, 200, array(), true);
     }
 }

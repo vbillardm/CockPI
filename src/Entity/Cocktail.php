@@ -31,13 +31,13 @@ class Cocktail
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Steps", mappedBy="cocktail")
-     * @JMS\MaxDepth(depth=0)
+     * @JMS\MaxDepth(depth=1)
      */
     private $steps;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="cocktail")
-     * @JMS\MaxDepth(depth=0)
+     * @JMS\MaxDepth(depth=1)
      */
     private $ingredients;
 
