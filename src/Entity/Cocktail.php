@@ -6,8 +6,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\VirtualProperty;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CocktailRepository")
@@ -30,23 +28,27 @@ class Cocktail
 
     /**
      * @ORM\Column(type="text")
+     * @JMS\Groups({"rating"})
      */
     public $description = "";
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Steps", mappedBy="cocktail")
      * @JMS\MaxDepth(depth=4)
+     * @JMS\Groups({"rating"})
      */
     private $steps;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="cocktail")
      * @JMS\MaxDepth(depth=2)
+     * @JMS\Groups({"rating"})
      */
     private $ingredients;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @JMS\Groups({"rating"})
      * @JMS\Groups({"rating"})
      */
     private $image ="";
@@ -102,6 +104,7 @@ class Cocktail
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Tags", inversedBy="cocktails")
      * @JMS\MaxDepth(depth=0)
+     * @JMS\Groups({"rating"})
      */
     private $tags;
 

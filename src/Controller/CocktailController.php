@@ -13,7 +13,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use App\Entity\Cocktail;
-use Nelmio\ApiDocBundle\ApiDocGenerator;
 
 /**
  *
@@ -141,7 +140,7 @@ class CocktailController extends Controller
         }
 
         $serializer = $this->get('jms_serializer');
-        $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks()->setGroups("rating"));
+        $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks());
 
         return new Response($cocktailJSON, 200, array(), true);
     }

@@ -40,7 +40,7 @@ class Steps
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="steps")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Ingredients", mappedBy="steps")
      * @JMS\MaxDepth(depth=3)
      */
     private $ingredients;
@@ -126,7 +126,7 @@ class Steps
     {
         if (!$this->ingredients->contains($ingredient)) {
             $this->ingredients[] = $ingredient;
-            $ingredient->setSteps($this);
+            $ingredient->addSteps($this);
         }
 
         return $this;
@@ -137,9 +137,9 @@ class Steps
         if ($this->ingredients->contains($ingredient)) {
             $this->ingredients->removeElement($ingredient);
             // set the owning side to null (unless already changed)
-            if ($ingredient->getSteps() === $this) {
-                $ingredient->setSteps(null);
-            }
+            if ($ingredient->getSteps()->contains($ingredient)) {
+                $ingredient->removeSteps($this);
+            };
         }
 
         return $this;

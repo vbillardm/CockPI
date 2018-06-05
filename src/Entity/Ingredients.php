@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,7 +34,7 @@ class Ingredients
     private $unity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Steps", inversedBy="ingredients")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Steps", inversedBy="ingredients")
      */
     private $steps;
 
@@ -40,6 +42,16 @@ class Ingredients
      * @ORM\ManyToOne(targetEntity="App\Entity\Cocktail", inversedBy="ingredients")
      */
     private $cocktail;
+
+    /**
+     * Ingredients constructor.
+     * @param $steps
+     */
+    public function __construct()
+    {
+        $this->steps = new ArrayCollection();
+    }
+
 
     public function getId()
     {
@@ -81,15 +93,33 @@ class Ingredients
 
         return $this;
     }
-
-    public function getSteps(): ?Steps
+    /**
+     * @return Collection|Steps[]
+     */
+    public function getSteps(): Collection
     {
         return $this->steps;
     }
 
-    public function setSteps(?Steps $steps): self
+    public function addSteps(Steps $step): self
     {
-        $this->steps = $steps;
+        if (!$this->steps->contains($step)) {
+            $this->steps[] = $step;
+            $step->addIngredient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSteps(Steps $step): self
+    {
+        if ($this->steps->contains($step)) {
+            $this->steps->removeElement($step);
+            // set the owning side to null (unless already changed)
+            if ($step->getIngredients()->contains($this)) {
+                $step->removeIngredient($this);
+            };
+        }
 
         return $this;
     }
