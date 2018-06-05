@@ -4,11 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ingredients;
 use App\Entity\Tags;
-use JMS\Serializer\Exclusion\DisjunctExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluator;
 use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use Symfony\Component\DependencyInjection\ExpressionLanguage;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -96,8 +92,7 @@ class CocktailController extends Controller
 
         if ( intval($request->get('get_tags')) === 1){
             $tags = $this->getCocktails();
-            $result = [$tags, $cocktails];
-            return View::create($result, Response::HTTP_CREATED, []);
+            return View::create($tags, Response::HTTP_CREATED, []);
         }
 
         return View::create($cocktails, Response::HTTP_CREATED, []);
@@ -145,7 +140,10 @@ class CocktailController extends Controller
             return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
         }
 
-        return new JsonResponse($cocktail, 200, array(), true);
+        $serializer = $this->get('jms_serializer');
+        $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks()->setGroups("rating"));
+
+        return new Response($cocktailJSON, 200, array(), true);
     }
 
 

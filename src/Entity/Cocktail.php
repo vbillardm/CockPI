@@ -19,10 +19,12 @@ class Cocktail
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @JMS\Groups({"rating"})
      */
     public $id;
     /**
      * @ORM\Column(type="string", length=100)
+     * @JMS\Groups({"rating"})
      */
     public $name;
 
@@ -45,46 +47,55 @@ class Cocktail
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $image ="";
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $speedRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $speedRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $difficultyRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $difficultyRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $PriceRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $priceRateVotes = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $GlobalRate = 0;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @JMS\Groups({"rating"})
      */
     private $globalRateVotes = 0;
 
