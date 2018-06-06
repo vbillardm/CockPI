@@ -69,28 +69,10 @@ class CocktailController extends Controller
             $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
 
             // algo valeurs ajouté pour les tags
-            foreach ($cocktails as $index => $cocktail){
-
-                $cocktails[$index]["value"] = 1;
-                $tags = ($this->getDoctrine()->getRepository(Cocktail::class)->find($cocktail["id"]))->getTags();
-                $cocktails[$index]["tags"] = $tags->getValues();
-
-                if( $request->get('caracteristique') != null or $request->get('context') != null){
-                foreach ($tags as $tag){
-                    $ids = explode(",", $request->get('caracteristique'));
-                    if(in_array($tag->getId(), $ids )){
-                        $cocktails[$index]["value"] += 2;
-                    };
-
-                    $ids_context = explode(",", $request->get('context'));
-                    if(in_array($tag->getId(), $ids_context )){
-                        $cocktails[$index]["value"] += 1;
-                    };
-                    }
-                }
-            }
+            $cocktails = $this->addTagsAndValue($request, $cocktails);
         }else{
             $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->findTheBest();
+            $cocktails = $this->addTagsAndValue(null, $cocktails);
         }
 
         if ( intval($request->get('get_tags')) === 1){
@@ -176,5 +158,32 @@ class CocktailController extends Controller
         $cocktailJSON = $serializer->serialize($result, 'json', SerializationContext::create()->enableMaxDepthChecks());
 
         return new JsonResponse($cocktailJSON, 200, array(), true);
+    }
+
+    private function addTagsAndValue($request = null, $cocktails)
+    {
+        foreach ($cocktails as $index => $cocktail){
+
+            $cocktails[$index]["value"] = 1;
+            $tags = ($this->getDoctrine()->getRepository(Cocktail::class)->find($cocktail["id"]))->getTags();
+            $cocktails[$index]["tags"] = $tags->getValues();
+
+            if($request != null){
+                if( $request->get('caracteristique') != null or $request->get('context') != null){
+                    foreach ($tags as $tag){
+                        $ids = explode(",", $request->get('caracteristique'));
+                        if(in_array($tag->getId(), $ids )){
+                            $cocktails[$index]["value"] += 2;
+                        };
+
+                        $ids_context = explode(",", $request->get('context'));
+                        if(in_array($tag->getId(), $ids_context )){
+                            $cocktails[$index]["value"] += 1;
+                        };
+                    }
+                }
+            }
+        }
+        return $cocktails;
     }
 }
