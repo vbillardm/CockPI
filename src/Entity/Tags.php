@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TagsRepository")
@@ -36,6 +37,7 @@ class Tags
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Cocktail", mappedBy="tags")
+     * @JMS\MaxDepth(depth=0)
      */
     private $cocktails;
 
