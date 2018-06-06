@@ -66,7 +66,7 @@ class CocktailController extends Controller
             if(empty($cocktails)) {
                 return View::create("This name does not match any cocktail bitch", Response::HTTP_BAD_REQUEST, []);
             }
-        }elseif ( $request->get('alcool') != "" and $request->get('ingredients') != ""){
+        }elseif ( $request->get('alcool') != ""){
             $cocktails = $this->getDoctrine()->getRepository(Cocktail::class)->filterCocktails($request);
 
             // algo valeurs ajouté pour les tags
