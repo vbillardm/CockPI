@@ -71,8 +71,12 @@ class CocktailController extends Controller
 
             // algo valeurs ajouté pour les tags
             foreach ($cocktails as $index => $cocktail){
+
                 $cocktails[$index]["value"] = 1;
                 $tags = ($this->getDoctrine()->getRepository(Cocktail::class)->find($cocktail["id"]))->getTags();
+                $cocktails[$index]["tags"] = $tags->getValues();
+
+                if( $request->get('caracteristique') != null or $request->get('context') != null){
                 foreach ($tags as $tag){
                     $ids = explode(",", $request->get('caracteristique'));
                     if(in_array($tag->getId(), $ids )){
@@ -83,6 +87,7 @@ class CocktailController extends Controller
                     if(in_array($tag->getId(), $ids_context )){
                         $cocktails[$index]["value"] += 1;
                     };
+                    }
                 }
             }
         }else{
@@ -94,7 +99,10 @@ class CocktailController extends Controller
             return View::create($tags, Response::HTTP_CREATED, []);
         }
 
-        return View::create($cocktails, Response::HTTP_CREATED, []);
+        $serializer = $this->get('jms_serializer');
+        $cocktailJSON = $serializer->serialize($cocktails, 'json', SerializationContext::create()->enableMaxDepthChecks());
+
+        return new Response($cocktailJSON, 200, array(), true);
     }
 
     /**

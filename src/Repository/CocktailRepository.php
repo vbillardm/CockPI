@@ -29,7 +29,7 @@ class CocktailRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder("c");
         $qb
-            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate");
+            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate", "c.speedRate", "c.difficultyRate", "c.PriceRate");
 
         if ( $request->get('ingredients') ){
             $ids = explode(",", $request->get('ingredients'));
