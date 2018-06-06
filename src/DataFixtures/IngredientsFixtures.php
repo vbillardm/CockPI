@@ -37,8 +37,8 @@ class IngredientsFixtures extends Fixture
         $ingredient5 = new Ingredients();
         $ingredient5->setName("Sirop de sucre de canne");
         $ingredient5->setQuantity(2);
-        $ingredient5->setUnity("cl de surcre de canne");
-        $this->setReference("surcre_canne_2", $ingredient5);
+        $ingredient5->setUnity("cl de sucre de canne");
+        $this->setReference("sucre_canne_2", $ingredient5);
 
         $ingredient6 = new Ingredients();
         $ingredient6->setName("Eau gazeuse");
@@ -127,7 +127,7 @@ class IngredientsFixtures extends Fixture
         $ingredient20 = new Ingredients();
         $ingredient20->setName("Chantilly");
         $ingredient20->setQuantity(1);
-        $ingredient20->setUnity("dose de crème chantilly et des copeaux de chocolat (à défaut un peu de cacao non sucré)");
+        $ingredient20->setUnity("dose de crème chantilly");
         $this->setReference("chantilly_1", $ingredient20);
 
         $ingredient21 = new Ingredients();
@@ -229,9 +229,98 @@ class IngredientsFixtures extends Fixture
         $ingredient37 = new Ingredients();
         $ingredient37->setName("Citron");
         $ingredient37->setQuantity(3);
-        $ingredient37->setUnity("citronsu");
+        $ingredient37->setUnity("citron");
         $this->setReference("citron_3", $ingredient37);
 
+        $ingredient38 = new Ingredients();
+        $ingredient38->setName("Gin");
+        $ingredient38->setQuantity(30);
+        $ingredient38->setUnity("cl de gin");
+        $this->setReference("gin_30", $ingredient38);
+
+        $ingredient39 = new Ingredients();
+        $ingredient39->setName("Lait de coco");
+        $ingredient39->setQuantity(4);
+        $ingredient39->setUnity("cl de lait de coco");
+        $this->setReference("lait_coco_4", $ingredient39);
+
+        $ingredient40 = new Ingredients();
+        $ingredient40->setName("Jus d'ananas");
+        $ingredient40->setQuantity(12);
+        $ingredient40->setUnity("cl de jus d'ananas");
+        $this->setReference("jus_ananas_12", $ingredient40);
+
+        $ingredient41 = new Ingredients();
+        $ingredient41->setName("Rhum Brun");
+        $ingredient41->setQuantity(2);
+        $ingredient41->setUnity("cl de rhum brun");
+        $this->setReference("rhum_brun_2", $ingredient41);
+
+        $ingredient42 = new Ingredients();
+        $ingredient42->setName("Prosecco (vin blanc pétillant)");
+        $ingredient42->setQuantity(6);
+        $ingredient42->setUnity("cl de prosecco");
+        $this->setReference("prosecco_6", $ingredient42);
+
+        $ingredient43 = new Ingredients();
+        $ingredient43->setName("Apérol");
+        $ingredient43->setQuantity(4);
+        $ingredient43->setUnity("cl d'Apérol'");
+        $this->setReference("aperol_4", $ingredient43);
+
+        $ingredient44 = new Ingredients();
+        $ingredient44->setName("Eau gazeuse");
+        $ingredient44->setQuantity(2);
+        $ingredient44->setUnity("cl d'eau gazeuse");
+        $this->setReference("eau_gazeuse_2", $ingredient44);
+
+        $ingredient45 = new Ingredients();
+        $ingredient45->setName("Rondelle d'orange");
+        $ingredient45->setQuantity(1);
+        $ingredient45->setUnity("rondelle d'orange");
+        $this->setReference("rondelle_orange_1", $ingredient45);
+
+        $ingredient46 = new Ingredients();
+        $ingredient46->setName("Fleur d'hibiscus");
+        $ingredient46->setQuantity(12);
+        $ingredient46->setUnity("g de fleurs d'hibiscus");
+        $this->setReference("fleur_hibiscus_12", $ingredient46);
+
+        $ingredient47 = new Ingredients();
+        $ingredient47->setName("Fraise");
+        $ingredient47->setQuantity(60);
+        $ingredient47->setUnity("g de fraises");
+        $this->setReference("fraise_60", $ingredient47);
+
+        $ingredient48 = new Ingredients();
+        $ingredient48->setName("Tequila");
+        $ingredient48->setQuantity(5);
+        $ingredient48->setUnity("cl de tequila");
+        $this->setReference("tequila_5", $ingredient48);
+
+        $ingredient49 = new Ingredients();
+        $ingredient49->setName("Sucre brun");
+        $ingredient49->setQuantity(25);
+        $ingredient49->setUnity("g de sucre brun");
+        $this->setReference("sucre_brun_25", $ingredient49);
+
+        $ingredient50 = new Ingredients();
+        $ingredient50->setName("Sirop de grenadine");
+        $ingredient50->setQuantity(1);
+        $ingredient50->setUnity("ml de sirop de grenadine");
+        $this->setReference("grenadine_1", $ingredient50);
+
+        $ingredient51 = new Ingredients();
+        $ingredient51->setName("Tabasco");
+        $ingredient51->setQuantity(5);
+        $ingredient51->setUnity("gouttes de tabasco");
+        $this->setReference("tabasco_4", $ingredient51);
+
+        $ingredient52 = new Ingredients();
+        $ingredient52->setName("Vodka");
+        $ingredient52->setQuantity(3);
+        $ingredient52->setUnity("ml de vodka");
+        $this->setReference("vodka_3", $ingredient52);
 
         $manager->persist($ingredient1);
         $manager->persist($ingredient2);
@@ -270,6 +359,21 @@ class IngredientsFixtures extends Fixture
         $manager->persist($ingredient35);
         $manager->persist($ingredient36);
         $manager->persist($ingredient37);
+        $manager->persist($ingredient38);
+        $manager->persist($ingredient39);
+        $manager->persist($ingredient40);
+        $manager->persist($ingredient41);
+        $manager->persist($ingredient42);
+        $manager->persist($ingredient43);
+        $manager->persist($ingredient44);
+        $manager->persist($ingredient45);
+        $manager->persist($ingredient46);
+        $manager->persist($ingredient47);
+        $manager->persist($ingredient48);
+        $manager->persist($ingredient49);
+        $manager->persist($ingredient50);
+        $manager->persist($ingredient51);
+        $manager->persist($ingredient52);
         $manager->flush();
     }
 }

@@ -1,4 +1,4 @@
-<?php
+GA<?php
 
 namespace App\DataFixtures;
 
@@ -100,18 +100,18 @@ class TagsFixtures extends Fixture
 
         $tags18 = new Tags();
         $tags18->setType(Tags::Tag_Context);
-        $tags18->setName("se vanter");
-        $this->setReference("vanter_context", $tags18);
+        $tags18->setName("avoir la classe");
+        $this->setReference("classe_context", $tags18);
 
         $tags19 = new Tags();
         $tags19->setType(Tags::Tag_Context);
         $tags19->setName("se remettre d'une gueule de bois");
         $this->setReference("remettre_gueule_context", $tags19);
 
-        /*$tags20 = new Tags();
+        $tags20 = new Tags();
         $tags20->setType(Tags::Tag_Context);
-        $tags20->setName("????");
-        $this->setReference("????_context", $tags20);*/
+        $tags20->setName("autour d'un bon repas");
+        $this->setReference("repas_context", $tags20);
 
         // Alcool
         $tags21 = new Tags();
@@ -154,6 +154,21 @@ class TagsFixtures extends Fixture
         $tags28->setName("Alcool à 90");
         $this->setReference("alcool_90_alcool", $tags28);
 
+        $tags29 = new Tags();
+        $tags29->setType(Tags::Tag_Alcools);
+        $tags29->setName("Gin");
+        $this->setReference("gin_alcool", $tags29);
+
+        $tags30 = new Tags();
+        $tags30->setType(Tags::Tag_Alcools);
+        $tags30->setName("Vin");
+        $this->setReference("vin_alcool", $tags30);
+
+        $tags31 = new Tags();
+        $tags31->setType(Tags::Tag_Alcools);
+        $tags31->setName("Tequila");
+        $this->setReference("tequila_alcool", $tags31);
+
 
         $manager->persist($tags1);
         $manager->persist($tags2);
@@ -174,7 +189,7 @@ class TagsFixtures extends Fixture
         $manager->persist($tags17);
         $manager->persist($tags18);
         $manager->persist($tags19);
-        //$manager->persist($tags20);
+        $manager->persist($tags20);
         $manager->persist($tags21);
         $manager->persist($tags22);
         $manager->persist($tags23);
@@ -183,6 +198,9 @@ class TagsFixtures extends Fixture
         $manager->persist($tags26);
         $manager->persist($tags27);
         $manager->persist($tags28);
+        $manager->persist($tags29);
+        $manager->persist($tags30);
+        $manager->persist($tags31);
         $manager->flush();
     }
 }
