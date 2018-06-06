@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Ingredients;
 use App\Entity\Tags;
-use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\SerializationContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,7 +40,6 @@ class CocktailController extends Controller
             "tags" => $tags,
         ];
         return $result;
-//        return View::create($result, Response::HTTP_OK, []);
     }
 
 
