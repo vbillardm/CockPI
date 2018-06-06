@@ -6,38 +6,43 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TagsRepository")
+ * @ExclusionPolicy("all")
  */
 class Tags
 {
 
-    const Tag_Context = "Context";
-    const Tag_Caracteristique = "Caracteristique";
-    const Tag_Alcools = "Alcools";
+    const Tag_Context = "context";
+    const Tag_Caracteristique = "caracteristique";
+    const Tag_Alcools = "alcool";
 
 
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
+     * @Expose
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Expose
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Expose
      */
     private $type;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Cocktail", mappedBy="tags")
-     * @JMS\MaxDepth(depth=0)
      */
     private $cocktails;
 

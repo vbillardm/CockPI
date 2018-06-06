@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Ingredients;
 use App\Entity\Tags;
+use JMS\Serializer\Annotation\Exclude;
 use JMS\Serializer\SerializationContext;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +32,7 @@ class CocktailController extends Controller
         $tags = $this->getDoctrine()->getRepository(Tags::class)->fetchAllTags();
 
         foreach ($ingredients as $key => $ingredient){
-            $ingredients[$key]["type"] = "ingredient";
+            $ingredients[$key]["type"] = "ingredients";
             array_push($tags, $ingredients[$key]);
         }
 
