@@ -103,7 +103,7 @@ class Cocktail
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Tags", inversedBy="cocktails")
-     * @JMS\MaxDepth(depth=0)
+     * @JMS\MaxDepth(depth=2)
      * @JMS\Groups({"rating"})
      */
     private $tags;
