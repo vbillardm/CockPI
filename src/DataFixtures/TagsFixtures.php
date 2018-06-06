@@ -64,22 +64,22 @@ class TagsFixtures extends Fixture
         //Contexte
         $tags11 = new Tags();
         $tags11->setType(Tags::Tag_Context);
-        $tags11->setName("une soirée entre amis");
+        $tags11->setName("entre amis");
         $this->setReference("soirée_context", $tags11);
 
         $tags12 = new Tags();
         $tags12->setType(Tags::Tag_Context);
-        $tags12->setName("un repas en amoureux");
+        $tags12->setName("en couple");
         $this->setReference("repas_amoureux_context", $tags12);
 
         $tags13 = new Tags();
         $tags13->setType(Tags::Tag_Context);
-        $tags13->setName("une grosse fête");
+        $tags13->setName("fête");
         $this->setReference("fête_context", $tags13);
 
         $tags14 = new Tags();
         $tags14->setType(Tags::Tag_Context);
-        $tags14->setName("un apéro");
+        $tags14->setName("apéro");
         $this->setReference("apéro_context", $tags14);
 
         $tags15 = new Tags();
@@ -89,27 +89,27 @@ class TagsFixtures extends Fixture
 
         $tags16 = new Tags();
         $tags16->setType(Tags::Tag_Context);
-        $tags16->setName("se bourrer la gueule rapidement");
+        $tags16->setName("être bourré");
         $this->setReference("bourrer_gueule_context", $tags16);
 
         $tags17 = new Tags();
         $tags17->setType(Tags::Tag_Context);
-        $tags17->setName("devenir un vrai barman");
+        $tags17->setName("expert");
         $this->setReference("vrai_barman_context", $tags17);
 
         $tags18 = new Tags();
         $tags18->setType(Tags::Tag_Context);
-        $tags18->setName("avoir la classe");
+        $tags18->setName("épater");
         $this->setReference("classe_context", $tags18);
 
         $tags19 = new Tags();
         $tags19->setType(Tags::Tag_Context);
-        $tags19->setName("se remettre d'une gueule de bois");
+        $tags19->setName("décuver");
         $this->setReference("remettre_gueule_context", $tags19);
 
         $tags20 = new Tags();
         $tags20->setType(Tags::Tag_Context);
-        $tags20->setName("autour d'un bon repas");
+        $tags20->setName("repas");
         $this->setReference("repas_context", $tags20);
 
         // Alcool
