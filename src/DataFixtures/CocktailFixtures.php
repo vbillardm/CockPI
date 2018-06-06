@@ -144,7 +144,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $chiller_context = $this->getReference("chiller_context");
         $bourrer_gueule_context = $this->getReference("bourrer_gueule_context");
         $vrai_barman_context = $this->getReference("vrai_barman_context");
-        $vanter_context = $this->getReference("vanter_context");
+        $classe_context = $this->getReference("classe_context");
         $remettre_gueule_context = $this->getReference("remettre_gueule_context");
         $repas_context = $this->getReference("repas_context");
 
@@ -159,6 +159,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $alcool_90_alcool = $this->getReference("alcool_90_alcool");
         $gin_alcool = $this->getReference("gin_alcool");
         $vin_alcool = $this->getReference("vin_alcool");
+        $tequila_alcool = $this->getReference("tequila_alcool");
 
         $cocktail1 = new Cocktail();
         $cocktail1->setImage("https://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg");
@@ -224,7 +225,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail3->setPriceRate(1);
         $cocktail3->addTag($frais_caract);
         $cocktail3->addTag($sucré_caract);
-        $cocktail8->addTag($rapide_caract);
+        $cocktail3->addTag($rapide_caract);
         $cocktail3->addTag($chiller_context);
         $cocktail3->addTag($repas_amoureux_context);
         $cocktail3->addTag($vodka_alcool);
@@ -348,7 +349,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail9->addTag($original_caract);
         $cocktail9->addTag($gourmand_caract);
         $cocktail9->addTag($chiller_context);
-        $cocktail9->addTag($vanter_context);
+        $cocktail9->addTag($classe_context);
         $cocktail9->addTag($whisky_alcool);
 
         $cocktail10 = new Cocktail();
@@ -367,7 +368,7 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail10->addTag($frais_caract);
         $cocktail10->addTag($bourrer_gueule_context);
         $cocktail10->addTag($fête_context);
-        $cocktail10->addTag($vanter_context);
+        $cocktail10->addTag($classe_context);
         $cocktail10->addTag($whisky_alcool);
 
         $cocktail11 = new Cocktail();
