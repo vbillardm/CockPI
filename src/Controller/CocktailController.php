@@ -117,6 +117,11 @@ class CocktailController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $cocktail = $this->getDoctrine()->getRepository(Cocktail::class)->findByid($id);
+
+        if(empty($cocktail)) {
+            return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
+        }
+
         $cocktail->setGlobalRateVotes($cocktail->getGlobalRateVotes() +1);
         $cocktail->setGlobalRate($cocktail->getGlobalRate() + $request->get('rate'));
 
@@ -124,9 +129,7 @@ class CocktailController extends Controller
         $em->flush();
 
 
-        if(empty($cocktail)) {
-            return View::create("not found dude", Response::HTTP_NOT_FOUND, []);
-        }
+
 
         $serializer = $this->get('jms_serializer');
         $cocktailJSON = $serializer->serialize($cocktail, 'json', SerializationContext::create()->enableMaxDepthChecks());
