@@ -35,7 +35,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("rhum_blanc_4", $ingredient4);
 
         $ingredient5 = new Ingredients();
-        $ingredient5->setName("Sirop de sucre de canne");
+        $ingredient5->setName("Sucre canne");
         $ingredient5->setQuantity(2);
         $ingredient5->setUnity("cl de sucre de canne");
         $this->setReference("sucre_canne_2", $ingredient5);
@@ -53,7 +53,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("campari_4", $ingredient7);
 
         $ingredient8 = new Ingredients();
-        $ingredient8->setName("Vermouth italien");
+        $ingredient8->setName("Vermouth");
         $ingredient8->setQuantity(4);
         $ingredient8->setUnity("cl de vermouth italien");
         $this->setReference("vermouth_4", $ingredient8);
@@ -107,7 +107,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("noix_coco_1", $ingredient16);
 
         $ingredient17 = new Ingredients();
-        $ingredient17->setName("Jus de cranberry");
+        $ingredient17->setName("Cranberry");
         $ingredient17->setQuantity(2);
         $ingredient17->setUnity("cl de jus de cranberry");
         $this->setReference("cranberry_2", $ingredient17);
@@ -155,13 +155,13 @@ class IngredientsFixtures extends Fixture
         $this->setReference("worcestershire_1", $ingredient24);
 
         $ingredient25 = new Ingredients();
-        $ingredient25->setName("Jus de tomates");
+        $ingredient25->setName("Tomates");
         $ingredient25->setQuantity(12);
         $ingredient25->setUnity("cl de jus de tomates");
         $this->setReference("jus_tomate_12", $ingredient25);
 
         $ingredient26 = new Ingredients();
-        $ingredient26->setName("Jus de citron");
+        $ingredient26->setName("Citron");
         $ingredient26->setQuantity(1);
         $ingredient26->setUnity("cl de jus de citron");
         $this->setReference("jus_citron_1", $ingredient26);
@@ -197,7 +197,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("glace_vanille_25", $ingredient31);
 
         $ingredient32 = new Ingredients();
-        $ingredient32->setName("Liqueur de café");
+        $ingredient32->setName("Café");
         $ingredient32->setQuantity(20);
         $ingredient32->setUnity("cl de liqueur de café");
         $this->setReference("liqueur_café_20", $ingredient32);
@@ -245,7 +245,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("lait_coco_4", $ingredient39);
 
         $ingredient40 = new Ingredients();
-        $ingredient40->setName("Jus d'ananas");
+        $ingredient40->setName("Ananas");
         $ingredient40->setQuantity(12);
         $ingredient40->setUnity("cl de jus d'ananas");
         $this->setReference("jus_ananas_12", $ingredient40);
@@ -257,7 +257,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("rhum_brun_2", $ingredient41);
 
         $ingredient42 = new Ingredients();
-        $ingredient42->setName("Prosecco (vin blanc pétillant)");
+        $ingredient42->setName("Prosecco");
         $ingredient42->setQuantity(6);
         $ingredient42->setUnity("cl de prosecco");
         $this->setReference("prosecco_6", $ingredient42);
@@ -275,7 +275,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("eau_gazeuse_2", $ingredient44);
 
         $ingredient45 = new Ingredients();
-        $ingredient45->setName("Rondelle d'orange");
+        $ingredient45->setName("Orange");
         $ingredient45->setQuantity(1);
         $ingredient45->setUnity("rondelle d'orange");
         $this->setReference("rondelle_orange_1", $ingredient45);
@@ -305,7 +305,7 @@ class IngredientsFixtures extends Fixture
         $this->setReference("sucre_brun_25", $ingredient49);
 
         $ingredient50 = new Ingredients();
-        $ingredient50->setName("Sirop de grenadine");
+        $ingredient50->setName("Grenadine");
         $ingredient50->setQuantity(1);
         $ingredient50->setUnity("ml de sirop de grenadine");
         $this->setReference("grenadine_1", $ingredient50);
