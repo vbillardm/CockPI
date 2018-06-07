@@ -81,7 +81,7 @@ class CocktailRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder("c");
         $qb
-            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate")
+            ->select("c.id", "c.name", "c.image", "c.globalRateVotes", "c.GlobalRate", "c.difficultyRate", "c.speedRate", "c.PriceRate")
             ->orderBy("c.GlobalRate", "DESC")
             ->setMaxResults(12);
 
