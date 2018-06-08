@@ -99,9 +99,9 @@ class CocktailRepository extends ServiceEntityRepository
 //                "s.id", "s.name as stepname", "s.description", "s.url", "s.image", "s.nStep",
 //                "i.id", "i.name as ingredientName", "i.quantity", "i.unity"
 //            )
-            ->join("c.tags", "t")
-            ->join("c.steps", "s")
-            ->join("c.ingredients", "i")
+//            ->join("c.tags", "t")
+//            ->join("c.steps", "s")
+//            ->join("c.ingredients", "i")
             ->where("c.id = :id")
             ->setParameter("id", $id);
 

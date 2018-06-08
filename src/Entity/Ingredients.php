@@ -39,7 +39,7 @@ class Ingredients
     private $steps;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Cocktail", inversedBy="ingredients")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Cocktail", inversedBy="ingredients")
      */
     private $cocktail;
 
@@ -50,6 +50,7 @@ class Ingredients
     public function __construct()
     {
         $this->steps = new ArrayCollection();
+        $this->cocktail = new ArrayCollection();
     }
 
 
@@ -124,15 +125,38 @@ class Ingredients
         return $this;
     }
 
+    public function addCocktail(Cocktail $cocktail): self
+    {
+        if (!$this->cocktail->contains($cocktail)) {
+            $this->cocktail[] = $cocktail;
+            $cocktail->addIngredient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCocktail(Cocktail $cocktail): self
+    {
+        if ($this->cocktail->contains($cocktail)) {
+            $this->cocktail->removeElement($cocktail);
+            // set the owning side to null (unless already changed)
+            if ($cocktail->getIngredients()->contains($this)) {
+                $cocktail->removeIngredient($this);
+            };
+        }
+
+        return $this;
+    }
+
     public function getCocktail(): ?Cocktail
     {
         return $this->cocktail;
     }
-
-    public function setCocktail(?Cocktail $cocktail): self
-    {
-        $this->cocktail = $cocktail;
-
-        return $this;
-    }
+//
+//    public function setCocktail(?Cocktail $cocktail): self
+//    {
+//        $this->cocktail = $cocktail;
+//
+//        return $this;
+//    }
 }

@@ -40,7 +40,7 @@ class Cocktail
     private $steps;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ingredients", mappedBy="cocktail")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Ingredients", mappedBy="cocktail")
      * @JMS\MaxDepth(depth=2)
      * @JMS\Groups({"rating"})
      */
@@ -206,7 +206,7 @@ class Cocktail
     {
         if (!$this->ingredients->contains($ingredient)) {
             $this->ingredients[] = $ingredient;
-            $ingredient->setCocktail($this);
+            $ingredient->addCocktail($this);
         }
 
         return $this;
@@ -217,8 +217,8 @@ class Cocktail
         if ($this->ingredients->contains($ingredient)) {
             $this->ingredients->removeElement($ingredient);
             // set the owning side to null (unless already changed)
-            if ($ingredient->getCocktail() === $this) {
-                $ingredient->setCocktail(null);
+            if ($ingredient->getCocktail()->contains($this)) {
+                $ingredient->removeCocktail($this);
             }
         }
 
