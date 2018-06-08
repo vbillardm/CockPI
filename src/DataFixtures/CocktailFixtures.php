@@ -425,9 +425,9 @@ class CocktailFixtures extends Fixture implements DependentFixtureInterface
         $cocktail13->addIngredient($rhum_brun_2);
         $cocktail13->addIngredient($rhum_blanc_4);
         $cocktail13->addIngredient($glace_2);
-        $cocktail13->addStep($step1_pinacolada);
-        $cocktail13->addStep($step2_pinacolada);
-        $cocktail13->addStep($step3_pinacolada);
+        $cocktail13->addStep($step1_spritz);
+        $cocktail13->addStep($step2_spritz);
+        $cocktail13->addStep($step3_spritz);
         $cocktail13->setSpeedRate(1);
         $cocktail13->setDifficultyRate(1);
         $cocktail13->setPriceRate(2);
